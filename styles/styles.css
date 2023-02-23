@@ -1,3 +1,158 @@
-.img-container {
-  flex: flex;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 1rem 4rem;
+  position: fixed;
+  width: 100%;
+}
+
+.logo {
+  color: #335576;
+  text-decoration: none;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+}
+
+.nav__link {
+  font-weight: bold;
+  text-decoration: none;
+  color: #777;
+}
+.nav__link--first {
+  display: inline-block;
+  padding: 6px 0;
+  border-bottom: 3px solid #db7a4e;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fefaf5;
+  padding: 5rem;
+  background-image: url(https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80);
+  background-size: cover;
+  background-size: 100%;
+  height: 35rem;
+}
+
+.hero__textbox {
+  width: 600px;
+}
+.hero__textbox h2 {
+  font-size: 2.4rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+.hero__textbox p {
+  color: white;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+.hero__textbox button {
+  font-size: 1rem;
+  color: white;
+  background-color: #db7a4e;
+  padding: 1rem 3rem;
+  border: 0;
+  border-radius: 200px;
+  display: none;
+}
+
+.hero__img {
+  height: 350px;
+  display: none;
+}
+
+.rec {
+  background-color: rgb(244, 244, 244);
+}
+
+.rec-heading {
+  color: #335576;
+  padding: 2rem 5rem;
+}
+
+.rec-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.card {
+  height: 26rem;
+  width: 16rem;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 6rem;
+  text-decoration: none;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.6);
+}
+.card--hawaii {
+  background-image: url(https://images.unsplash.com/photo-1563223771-5fe4038fbfc9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+}
+.card--iceland {
+  background-image: url(https://images.unsplash.com/photo-1609951651556-5334e2706168?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+}
+.card--greece {
+  background-image: url(https://images.unsplash.com/photo-1560512823-829485b8bf24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+}
+.card h2 {
+  display: inline;
+  position: relative;
+  top: 23rem;
+  left: 9rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fefaf5;
+  padding: 3rem 8rem;
+  color: #335576;
+}
+footer h2 {
+  margin: 2rem 0;
+}
+footer h6 {
+  color: #db7a4e;
+  margin: 1rem 0;
+}
+
+.hours-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.social img {
+  height: 2rem;
+  margin-right: 2rem;
+}
+
+.contact,
+.social,
+.hours {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }/*# sourceMappingURL=styles.css.map */
