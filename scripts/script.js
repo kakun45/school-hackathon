@@ -11,8 +11,7 @@ const randomDrink = () => {
          img1.setAttribute("src", `${newArr[0]}`);
       })
       .catch((err) => console.log(err));
-  }
-};
+  };
 
 randomDrink();
 console.log(16, newArr, typeof newArr, newArr[0]);
