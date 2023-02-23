@@ -1,24 +1,42 @@
-// const newArr = [];
-const randomDrink = () => {
-  // for (let i = 0; i < 3; i++) {
-    axios
-      .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-      .then((res) => {
-        const src = res.data.drinks[0].strDrinkThumb;
-        // img.setAttribute("src", src);
-        // newArr.push(src);
-        const img1 = document.querySelector(".img-card-left");
-         img1.setAttribute("src", `${newArr[0]}`);
-      })
-      .catch((err) => console.log(err));
-  };
+let endpoints = [
+  "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+  "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+  "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+];
 
-randomDrink();
-console.log(16, newArr, typeof newArr, newArr[0]);
-const img1 = document.querySelector(".img-card-left");
-// console.log(18, newArr[0]);
-// img1.setAttribute("src", `${newArr[0]}`);
-// const img2 = document.querySelector(".img-card-middle");
-// img2.setAttribute("src", newArr[1]);
-// const img3 = document.querySelector(".img-card-right");
-// img3.setAttribute("src", newArr[2]);
+axios
+  .all(endpoints.map((endpoint) => axios.get(endpoint)))
+  .then((res) => {
+    console.log(res[0]);
+    const img1 = res[0].data.drinks[0].strDrinkThumb;
+    const title1 = res[0].data.drinks[0].strDrink;
+    // console.log(title1);
+    getImg(img1, ".card--hawaii", title1, ".card__title1");
+
+    const img2 = res[1].data.drinks[0].strDrinkThumb;
+    const title2 = res[1].data.drinks[0].strDrink;
+    // console.log(title2);
+    getImg(img2, ".card--iceland", title2, ".card__title2");
+
+    const img3 = res[2].data.drinks[0].strDrinkThumb;
+    const title3 = res[2].data.drinks[0].strDrink;
+    getImg(img3, ".card--greece", title3, ".card__title3");
+  })
+  .catch((err) => console.log(err));
+
+// for one request only
+// const randomDrink = axios
+//   .get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+//   .then((res) => {
+//     const href = res.data.drinks[0].strDrinkThumb;
+//     getImg(href, ".card--hawaii");
+//   })
+//   .catch((err) => console.log(err));
+
+function getImg(href, card, titleName, titleClass) {
+  const img1 = document.querySelector(card);
+  img1.style.backgroundImage = `url(${href})`;
+  const title = document.querySelector(titleClass);
+  console.log(43, title);
+  title.innerText = titleName;
+}

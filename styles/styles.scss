@@ -1,15 +1,37 @@
 @use "global" as *;
 // header section
 
+@keyframes navbar {
+  0% {
+    background: $lightOrange;
+  }
+  25% {
+    background: lightpink;
+  }
+  50% {
+    background: rgb(212, 120, 188);
+  }
+  75% {
+    background: rgb(166, 113, 235);
+  }
+  100% {
+    background: $lightOrange;
+  }
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  // background-color: white;
 
   padding: 1rem 4rem;
   position: fixed;
   width: 100%;
+  animation-name: navbar;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  opacity: 90%;
 }
 
 .logo {
@@ -96,6 +118,7 @@
 .card {
   height: 26rem;
   width: 16rem;
+  transition: all 0.6s;
   border-radius: 5px;
   border: 1px solid rgb(0, 0, 0, 20%);
   margin-bottom: 6rem;
@@ -113,12 +136,19 @@
   &--greece {
     background-image: url(https://images.unsplash.com/photo-1560512823-829485b8bf24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
   }
-  h2 {
+  h4 {
     display: inline;
     position: relative;
     top: 23rem;
-    left: 9rem;
+    left: 1rem;
+    color: white;
+    background-color: rgba(215, 18, 229, 0.617);
   }
+}
+
+.card:hover {
+  transform: translateY(-1.2rem);
+  opacity: 50%;
 }
 
 // footer section
@@ -132,7 +162,7 @@ footer {
     margin: 2rem 0;
   }
   h6 {
-    color: $darkOrange;
+    color: rgb(212, 120, 188);
     margin: 1rem 0;
   }
 }
