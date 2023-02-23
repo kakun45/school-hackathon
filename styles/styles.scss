@@ -23,13 +23,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background-color: white;
 
   padding: 1rem 4rem;
   position: fixed;
   width: 100%;
   animation-name: navbar;
-  animation-duration: 6s;
+  animation-duration: 8s;
   animation-iteration-count: infinite;
   opacity: 90%;
   z-index: 99;
@@ -152,6 +151,15 @@
   opacity: 50%;
 }
 
+.card:hover > ul {
+  color: red;
+  opacity: 1;
+}
+
+// .card:hover > img {
+//   filter: grayscale(100%);
+// }
+
 // footer section
 footer {
   display: flex;
@@ -186,4 +194,16 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.ingredients-left,
+.ingredients-middle,
+.ingredients-right {
+  margin-left: 1.5rem;
+  opacity: 0;
+}
+
+.ingredients-left:hover {
+  opacity: 1;
+  outline: 1px solid transparent;
 }
